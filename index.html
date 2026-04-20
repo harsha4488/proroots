@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proroots Dental Care</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:Poppins; background:#f4f8fb; }
+
+/* HEADER */
+header {
+    background:#0a66c2;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    padding:15px 40px;
+    align-items:center;
+}
+
+.logo {
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo img {
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+/* HERO */
+.hero {
+    position:relative;
+    height:90vh;
+    overflow:hidden;
+}
+
+.hero img {
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:0;
+    transition:opacity 1s ease-in-out;
+}
+
+.hero img.active { opacity:1; }
+
+.hero-content {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    color:white;
+    text-align:center;
+}
+
+.hero h2 { font-size:48px; }
+
+.btn {
+    background:#00b4d8;
+    padding:12px 25px;
+    border-radius:25px;
+    color:white;
+    text-decoration:none;
+}
+
+/* SECTIONS */
+section { padding:60px 40px; text-align:center; }
+
+/* SERVICES */
+.services {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card {
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width:100%;
+    border-radius:10px;
+}
+
+/* ABOUT */
+.about {
+    display:flex;
+    flex-wrap:wrap;
+    gap:30px;
+    justify-content:center;
+    align-items:center;
+}
+
+.about img {
+    width:350px;
+    border-radius:15px;
+}
+
+/* GALLERY */
+.gallery {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.gallery img {
+    width:100%;
+    border-radius:12px;
+    transition:transform .3s;
+}
+
+.gallery img:hover {
+    transform:scale(1.05);
+}
+
+/* REVIEWS */
+.reviews {
+    max-width:900px;
+    margin:auto;
+    display:grid;
+    gap:20px;
+}
+
+.review-card {
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* CONTACT */
+form {
+    max-width:500px;
+    margin:auto;
+}
+
+input, textarea {
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+
+button {
+    background:#0a66c2;
+    color:white;
+    border:none;
+    padding:12px;
+    border-radius:25px;
+}
+
+/* FOOTER */
+footer {
+    background:#0a66c2;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">
+        <img src="doctor.jpeg" alt="Doctor">
+        <div>
+            <h1 style="margin:0;">🦷 Proroots Dental Care</h1>
+            <small style="font-size:12px;">Dr. Aditya • Dental Surgeon</small>
+        </div>
+    </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+    <img src="image1.jpeg" class="active">
+    <img src="image2.jpeg">
+    <img src="image3.jpeg">
+    <img src="image4.jpeg">
+    <img src="image5.jpeg">
+
+    <div class="hero-content">
+        <h2>Your Smile, Our Priority</h2>
+        <p>Advanced Dental Care with Modern Technology</p>
+        <a href="#contact" class="btn">Book Appointment</a>
+    </div>
+</div>
+
+<!-- SERVICES -->
+<section>
+    <h2>Our Services</h2>
+
+    <div class="services">
+        <div class="card">
+            <img src="cleaning.jpg">
+            <h3>Teeth Cleaning</h3>
+        </div>
+
+        <div class="card">
+            <img src="rootcanal.jpg">
+            <h3>Root Canal</h3>
+        </div>
+
+        <div class="card">
+            <img src="whitening.jpg">
+            <h3>Teeth Whitening</h3>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5">
+            <h3>Dental Implants</h3>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section>
+    <h2>About Us</h2>
+
+    <div class="about">
+        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5">
+        <div>
+            <p>We provide modern dental care with expert doctors and advanced tools.</p>
+        </div>
+    </div>
+</section>
+
+<!-- DOCTOR -->
+<section>
+    <h2>Our Doctor</h2>
+
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:30px;max-width:900px;margin:auto;">
+
+        <img src="doctor.jpeg" 
+             style="width:250px;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,0.2);">
+
+        <div style="text-align:left;max-width:500px;">
+            <h3 style="margin-bottom:10px;">Dr. Aditya</h3>
+            <p><strong>Dental Surgeon</strong></p>
+
+            <p style="margin-top:10px;">
+                Dr. Aditya is an experienced dental surgeon specializing in advanced 
+                and painless dental treatments. With a patient-first approach, 
+                he ensures comfort, precision, and high-quality care.
+            </p>
+
+            <p style="margin-top:10px;">
+                Expertise includes Root Canal Treatment, Dental Implants, 
+                Teeth Whitening, and Smile Makeovers.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+    <h2>Clinic Gallery</h2>
+
+    <div class="gallery">
+        <img src="image1.jpeg">
+        <img src="image2.jpeg">
+        <img src="image3.jpeg">
+        <img src="image4.jpeg">
+        <img src="image5.jpeg">
+    </div>
+</section>
+
+<!-- GOOGLE REVIEWS -->
+<section>
+    <h2>Google Reviews</h2>
+
+    <div style="margin-bottom:20px;">
+        <h3>⭐ 5 / 5 Rating</h3>
+        <p>Based on Google Reviews</p>
+
+        <a href="https://www.google.com/search?sca_esv=a3d84300357be008&sxsrf=ANbL-n76mG2tOJ9ixTi2VdlsbdR3AnMDqA:1776681093295&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOa76fqRc1IpGZP2inPEtxvwAkap0xcFJGNck8iytgm4YTC7jWyFI0UCsLR-K1en7DOMdsixQfnVliWJFXHolLKO7KBjOsmxEhGroZwaNkoTFkjOBDQ%3D%3D&q=Proroots+dental+care+Reviews&sa=X&ved=2ahUKEwjSrcfrnPyTAxUds5UCHcoLA-UQ0bkNegQIIRAF&biw=1470&bih=737&dpr=2" 
+           target="_blank"
+           style="background:#0a66c2;color:white;padding:10px 20px;border-radius:20px;text-decoration:none;">
+           View All Reviews on Google
+        </a>
+    </div>
+
+    <div class="reviews">
+        <div class="review-card">
+            ⭐⭐⭐⭐⭐
+            <p>"Excellent treatment and very friendly doctor. Highly recommended!"</p>
+            <strong>- Rahul</strong>
+        </div>
+
+        <div class="review-card">
+            ⭐⭐⭐⭐⭐
+            <p>"Painless root canal and very clean clinic. Great experience."</p>
+            <strong>- Sneha</strong>
+        </div>
+
+        <div class="review-card">
+            ⭐⭐⭐⭐⭐
+            <p>"Best dental clinic in Bangalore. Professional and caring staff."</p>
+            <strong>- Kiran</strong>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Contact Us</h2>
+
+    <form onsubmit="submitForm(event)">
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Message"></textarea>
+        <button type="submit">Send</button>
+    </form>
+
+    <p id="msg"></p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Prorrots Dental Care</p>
+</footer>
+
+<script>
+let slides = document.querySelectorAll(".hero img");
+let i = 0;
+
+setInterval(()=>{
+    slides[i].classList.remove("active");
+    i = (i + 1) % slides.length;
+    slides[i].classList.add("active");
+},3000);
+
+function submitForm(e){
+    e.preventDefault();
+    document.getElementById("msg").innerText = "Message sent successfully!";
+}
+</script>
+
+</body>
+</html>
