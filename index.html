@@ -168,6 +168,87 @@ footer {
     padding:20px;
     text-align:center;
 }
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 768px) {
+
+    header {
+        padding: 12px 15px;
+    }
+
+    .logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo h1 {
+        font-size: 16px;
+    }
+
+    .hero {
+        height: 70vh;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .hero-content {
+        width: 90%;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .services {
+        grid-template-columns: 1fr;
+    }
+
+    .about {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    /* DOCTOR SECTION FIX */
+    .doctor-container {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+
+    .doctor-container img {
+        width: 200px !important;
+    }
+
+    .doctor-text {
+        text-align: center !important;
+    }
+}
 </style>
 </head>
 
@@ -220,7 +301,7 @@ footer {
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5">
+            <img src="implant.jpg">
             <h3>Dental Implants</h3>
         </div>
     </div>
@@ -242,24 +323,20 @@ footer {
 <section>
     <h2>Our Doctor</h2>
 
-    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:30px;max-width:900px;margin:auto;">
+    <div class="doctor-container" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:30px;max-width:900px;margin:auto;">
 
-        <img src="doctor.jpeg" 
-             style="width:250px;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,0.2);">
+        <img src="doctor.jpeg" style="width:250px;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,0.2);">
 
-        <div style="text-align:left;max-width:500px;">
+        <div class="doctor-text" style="text-align:left;max-width:500px;">
             <h3 style="margin-bottom:10px;">Dr. Aditya</h3>
             <p><strong>Dental Surgeon</strong></p>
 
             <p style="margin-top:10px;">
-                Dr. Aditya is an experienced dental surgeon specializing in advanced 
-                and painless dental treatments. With a patient-first approach, 
-                he ensures comfort, precision, and high-quality care.
+                Experienced dental surgeon specializing in painless treatments with modern technology.
             </p>
 
             <p style="margin-top:10px;">
-                Expertise includes Root Canal Treatment, Dental Implants, 
-                Teeth Whitening, and Smile Makeovers.
+                Expertise: Root Canal, Implants, Whitening, Smile Makeover.
             </p>
         </div>
 
@@ -267,7 +344,7 @@ footer {
 </section>
 
 <!-- GALLERY -->
-<section id="gallery">
+<section>
     <h2>Clinic Gallery</h2>
 
     <div class="gallery">
@@ -279,37 +356,37 @@ footer {
     </div>
 </section>
 
-<!-- GOOGLE REVIEWS -->
+<!-- REVIEWS -->
 <section>
     <h2>Google Reviews</h2>
 
     <div style="margin-bottom:20px;">
-        <h3>⭐ 5 / 5 Rating</h3>
+        <h3>⭐ 5/ 5 Rating</h3>
         <p>Based on Google Reviews</p>
 
-        <a href="https://www.google.com/search?sca_esv=a3d84300357be008&sxsrf=ANbL-n76mG2tOJ9ixTi2VdlsbdR3AnMDqA:1776681093295&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOa76fqRc1IpGZP2inPEtxvwAkap0xcFJGNck8iytgm4YTC7jWyFI0UCsLR-K1en7DOMdsixQfnVliWJFXHolLKO7KBjOsmxEhGroZwaNkoTFkjOBDQ%3D%3D&q=Proroots+dental+care+Reviews&sa=X&ved=2ahUKEwjSrcfrnPyTAxUds5UCHcoLA-UQ0bkNegQIIRAF&biw=1470&bih=737&dpr=2" 
+        <a href="https://www.google.com/search?q=Proroots+Dental+Care" 
            target="_blank"
            style="background:#0a66c2;color:white;padding:10px 20px;border-radius:20px;text-decoration:none;">
-           View All Reviews on Google
+           View All Reviews
         </a>
     </div>
 
     <div class="reviews">
         <div class="review-card">
             ⭐⭐⭐⭐⭐
-            <p>"Excellent treatment and very friendly doctor. Highly recommended!"</p>
+            <p>"Excellent treatment and very friendly doctor."</p>
             <strong>- Rahul</strong>
         </div>
 
         <div class="review-card">
             ⭐⭐⭐⭐⭐
-            <p>"Painless root canal and very clean clinic. Great experience."</p>
+            <p>"Painless root canal and clean clinic."</p>
             <strong>- Sneha</strong>
         </div>
 
         <div class="review-card">
             ⭐⭐⭐⭐⭐
-            <p>"Best dental clinic in Bangalore. Professional and caring staff."</p>
+            <p>"Best dental clinic in Bangalore."</p>
             <strong>- Kiran</strong>
         </div>
     </div>
