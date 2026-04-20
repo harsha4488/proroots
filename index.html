@@ -19,6 +19,7 @@ header {
     justify-content:space-between;
     padding:15px 40px;
     align-items:center;
+    position:relative;
 }
 
 .logo {
@@ -34,6 +35,20 @@ header {
     object-fit:cover;
 }
 
+/* MENU */
+nav a {
+    color:white;
+    margin-left:20px;
+    text-decoration:none;
+    font-weight:500;
+}
+
+.menu-toggle {
+    display:none;
+    font-size:24px;
+    cursor:pointer;
+}
+
 /* HERO */
 .hero {
     position:relative;
@@ -41,12 +56,9 @@ header {
     overflow:hidden;
 }
 
-/* DARK OVERLAY */
 .hero::before {
     content:"";
     position:absolute;
-    top:0;
-    left:0;
     width:100%;
     height:100%;
     background:rgba(0,0,0,0.4);
@@ -59,7 +71,7 @@ header {
     height:100%;
     object-fit:cover;
     opacity:0;
-    transition:opacity 1s ease-in-out;
+    transition:1s;
 }
 
 .hero img.active { opacity:1; }
@@ -73,19 +85,10 @@ header {
     text-align:center;
     z-index:2;
     width:90%;
-    max-width:800px;
 }
 
-.hero h2 {
-    font-size:48px;
-    line-height:1.2;
-    margin-bottom:15px;
-}
-
-.hero p {
-    font-size:18px;
-    margin-bottom:20px;
-}
+.hero h2 { font-size:48px; }
+.hero p { margin:10px 0 20px; }
 
 .btn {
     background:#00b4d8;
@@ -93,7 +96,6 @@ header {
     border-radius:25px;
     color:white;
     text-decoration:none;
-    display:inline-block;
 }
 
 /* SECTIONS */
@@ -108,15 +110,12 @@ section { padding:60px 40px; text-align:center; }
 
 .card {
     background:white;
-    border-radius:15px;
     padding:20px;
+    border-radius:15px;
     box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
-.card img {
-    width:100%;
-    border-radius:10px;
-}
+.card img { width:100%; border-radius:10px; }
 
 /* ABOUT */
 .about {
@@ -142,11 +141,6 @@ section { padding:60px 40px; text-align:center; }
 .gallery img {
     width:100%;
     border-radius:12px;
-    transition:transform .3s;
-}
-
-.gallery img:hover {
-    transform:scale(1.05);
 }
 
 /* REVIEWS */
@@ -161,7 +155,6 @@ section { padding:60px 40px; text-align:center; }
     background:white;
     padding:20px;
     border-radius:12px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
 /* CONTACT */
@@ -174,8 +167,6 @@ input, textarea {
     width:100%;
     padding:12px;
     margin:10px 0;
-    border-radius:8px;
-    border:1px solid #ccc;
 }
 
 button {
@@ -194,77 +185,47 @@ footer {
     text-align:center;
 }
 
-/* MOBILE OPTIMIZATION */
-@media (max-width: 768px) {
+/* MOBILE */
+@media(max-width:768px){
 
-    header {
-        padding: 12px 15px;
+    header { padding:12px 15px; }
+
+    nav {
+        position:absolute;
+        top:60px;
+        right:0;
+        background:#0a66c2;
+        width:200px;
+        display:none;
+        flex-direction:column;
+        padding:15px;
     }
 
-    .logo img {
-        width: 40px;
-        height: 40px;
+    nav a {
+        margin:10px 0;
+        display:block;
     }
 
-    .logo h1 {
-        font-size: 16px;
+    nav.active {
+        display:flex;
     }
 
-    .hero {
-        height: 70vh;
+    .menu-toggle {
+        display:block;
+        color:white;
     }
 
-    .hero h2 {
-        font-size: 26px;
-        line-height:1.3;
-    }
+    .hero { height:70vh; }
 
-    .hero p {
-        font-size: 14px;
-    }
+    .hero h2 { font-size:26px; }
 
-    section {
-        padding: 40px 15px;
-    }
+    section { padding:40px 15px; }
 
-    h2 {
-        font-size: 22px;
-    }
+    .services { grid-template-columns:1fr; }
 
-    .services {
-        grid-template-columns: 1fr;
-    }
+    .about { flex-direction:column; }
 
-    .about {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about img {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    .gallery {
-        grid-template-columns: 1fr;
-    }
-
-    button {
-        width: 100%;
-    }
-
-    .doctor-container {
-        flex-direction: column !important;
-        text-align: center !important;
-    }
-
-    .doctor-container img {
-        width: 200px !important;
-    }
-
-    .doctor-text {
-        text-align: center !important;
-    }
+    .gallery { grid-template-columns:1fr; }
 }
 </style>
 </head>
@@ -276,10 +237,20 @@ footer {
     <div class="logo">
         <img src="doctor.jpeg">
         <div>
-            <h1 style="margin:0;">🦷 Proroots Dental Care</h1>
+            <h1>🦷 Proroots Dental Care</h1>
             <small>Dr. Aditya • Dental Surgeon</small>
         </div>
     </div>
+
+    <nav id="nav">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#doctor">Doctor</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 </header>
 
 <!-- HERO -->
@@ -292,68 +263,40 @@ footer {
 
     <div class="hero-content">
         <h2>Your Smile, Our Priority</h2>
-        <p>Advanced Dental Care with Modern Technology</p>
+        <p>Advanced Dental Care</p>
         <a href="#contact" class="btn">Book Appointment</a>
     </div>
 </div>
 
 <!-- SERVICES -->
-<section>
+<section id="services">
     <h2>Our Services</h2>
-
     <div class="services">
-        <div class="card">
-            <img src="cleaning.jpg">
-            <h3>Teeth Cleaning</h3>
-        </div>
-
-        <div class="card">
-            <img src="rootcanal.jpg">
-            <h3>Root Canal</h3>
-        </div>
-
-        <div class="card">
-            <img src="whitening.jpg">
-            <h3>Teeth Whitening</h3>
-        </div>
-
-        <div class="card">
-            <img src="implant.jpg">
-            <h3>Dental Implants</h3>
-        </div>
+        <div class="card"><img src="cleaning.jpg"><h3>Cleaning</h3></div>
+        <div class="card"><img src="rootcanal.jpg"><h3>Root Canal</h3></div>
+        <div class="card"><img src="whitening.jpg"><h3>Whitening</h3></div>
     </div>
 </section>
 
 <!-- ABOUT -->
-<section>
-    <h2>About Us</h2>
-
+<section id="about">
+    <h2>About</h2>
     <div class="about">
         <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5">
-        <div>
-            <p>We provide modern dental care with expert doctors and advanced tools.</p>
-        </div>
+        <p>Modern dental care with advanced tools.</p>
     </div>
 </section>
 
 <!-- DOCTOR -->
-<section>
-    <h2>Our Doctor</h2>
-
-    <div class="doctor-container" style="display:flex;flex-wrap:wrap;gap:30px;justify-content:center;align-items:center;max-width:900px;margin:auto;">
-        <img src="doctor.jpeg" style="width:250px;border-radius:15px;">
-        <div class="doctor-text" style="max-width:500px;text-align:left;">
-            <h3>Dr. Aditya</h3>
-            <p><strong>Dental Surgeon</strong></p>
-            <p>Experienced in painless treatments, implants, whitening & smile makeover.</p>
-        </div>
-    </div>
+<section id="doctor">
+    <h2>Doctor</h2>
+    <img src="doctor.jpeg" style="width:200px;border-radius:15px;">
+    <p>Dr. Aditya - Dental Surgeon</p>
 </section>
 
 <!-- GALLERY -->
-<section>
-    <h2>Clinic Gallery</h2>
-
+<section id="gallery">
+    <h2>Gallery</h2>
     <div class="gallery">
         <img src="image1.jpeg">
         <img src="image2.jpeg">
@@ -365,52 +308,31 @@ footer {
 
 <!-- REVIEWS -->
 <section>
-    <h2>Google Reviews</h2>
-
-    <div style="margin-bottom:20px;">
-        <h3>⭐ 5 / 5 Rating</h3>
-        <a href="https://www.google.com/search?q=Proroots+Dental+Care" target="_blank" class="btn">View Reviews</a>
-    </div>
-
+    <h2>Reviews</h2>
     <div class="reviews">
-        <div class="review-card">⭐⭐⭐⭐⭐ Excellent service!</div>
-        <div class="review-card">⭐⭐⭐⭐⭐ Very friendly doctor!</div>
-        <div class="review-card">⭐⭐⭐⭐⭐ Highly recommended clinic!</div>
+        <div class="review-card">⭐⭐⭐⭐⭐ Excellent service</div>
+        <div class="review-card">⭐⭐⭐⭐⭐ Very friendly</div>
     </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-    <h2>Contact Us</h2>
-
-    <form onsubmit="submitForm(event)">
-        <input type="text" placeholder="Name" required>
-        <input type="email" placeholder="Email" required>
+    <h2>Contact</h2>
+    <form>
+        <input placeholder="Name">
+        <input placeholder="Email">
         <textarea placeholder="Message"></textarea>
-        <button type="submit">Send</button>
+        <button>Send</button>
     </form>
-
-    <p id="msg"></p>
 </section>
 
-<!-- FOOTER -->
 <footer>
-    <p>© 2026 Proroots Dental Care</p>
+    <p>© 2026 Prorrots Dental Care</p>
 </footer>
 
 <script>
-let slides = document.querySelectorAll(".hero img");
-let i = 0;
-
-setInterval(()=>{
-    slides[i].classList.remove("active");
-    i = (i + 1) % slides.length;
-    slides[i].classList.add("active");
-},3000);
-
-function submitForm(e){
-    e.preventDefault();
-    document.getElementById("msg").innerText = "Message sent successfully!";
+function toggleMenu(){
+    document.getElementById("nav").classList.toggle("active");
 }
 </script>
 
